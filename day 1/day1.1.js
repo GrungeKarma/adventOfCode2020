@@ -6,10 +6,11 @@ const findTarget = (target) => {
             //compare the two numbers
             const num1 = numbers[i];
             const num2 = numbers[j];
-
+            // clarifying syntax
             if(num1 + num2 === target){
                 console.log(num1, num2);
                 return num1 * num2;
+                // return solution
             }
         }
     }

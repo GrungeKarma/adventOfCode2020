@@ -4,17 +4,18 @@ const findTarget = (target) => {
     for(let i = 0; i < numbers.length; i++){
         for (let j = i + 1; j < numbers.length; j++){
             for (let k = j + 1; k < numbers.length; k++){
-            //compare the two numbers
+            //compare the three numbers
             const num1 = numbers[i];
             const num2 = numbers[j];
             const num3 = numbers[k];
+            // clarifying syntax
 
             if(num1 + num2 + num3 === target){
                 console.log(num1, num2, num3);
                 return num1 * num2 * num3;
+                // return solution
             }
         }
-
     }
     }
 }
