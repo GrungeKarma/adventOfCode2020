@@ -4,22 +4,14 @@ const list = ["10-12 q: qqqqqqqqqqqdqqq", "16-17 d: ddddgdddddkddddsxddd", "2-4 
 const pattern = /(\d+)\-(\d+) (\w): (\S+)/;
 //use regular expressions to parse data
 
-console.log(
-    list.map((entry) => {
+const result = list.filter((entry) => {
     const [_, min, max, targetChar, password] = entry.match(pattern);
     const charCount = [...password].filter((char) => char === targetChar).length; 
     //destructurees array into managable chunks
-    if (parseInt(min) <= charCount && charCount <= parseInt(max)) {
-    // determines if the vaule is within the perscribed range
-        return true; 
-    } else {
-        return false; 
-    //assign bolian values to data
-    }
     
-    
-    })
-);
-
-
-
+    return parseInt(min) <= charCount && charCount <= parseInt(max);
+    //assigns booleian values to the passwords
+});
+const correctPasswords = result.length;
+//clarifying result
+console.log(correctPasswords);
